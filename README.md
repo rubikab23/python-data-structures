@@ -609,7 +609,7 @@ car1.windshield = "broken"  # Adding new fields is possible
 # Type annotations are hints and not enforced:
 print(Car("red", "NOT_A_FLOAT", 99))  # Car(color='red', mileage='NOT_A_FLOAT', automatic=99)
 ```
-### `collections.namedtuple`: Convenient Data Objects
+### collections.namedtuple: Convenient Data Objects
 
 The `namedtuple` class in Python (available from version 2.6 onwards) extends the functionality of the built-in tuple data type by providing named fields for accessing elements.
 
