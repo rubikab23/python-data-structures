@@ -49,28 +49,28 @@
 
 In Python, dictionaries (or dicts for short) are a central data structure. Dicts store an arbitrary number of objects, each identified by a unique dictionary key.
 
-#### Key Features:
+### Key Features:
 - **Efficient Lookup:** Allows for quick retrieval of values associated with a key.
 - **Insertion and Deletion:** Supports efficient insertion and deletion operations.
 - **Flexible:** Stores any Python object as values, and keys can be of various types (immutable types like strings and numbers are commonly used).
 - **Analogous to Real-World Maps:** Similar to how a phone book allows quick lookup of phone numbers using names, dictionaries enable fast retrieval of values based on keys.
 
-#### Terminology:
+### Terminology:
 - **Aliases:** Maps, hashmaps, lookup tables, associative arrays.
 
-#### Performance:
+### Performance:
 - **Lookup:** Typically O(1) on average for retrieval, insertion, and deletion operations, making them highly efficient for large datasets.
 
-#### Applications:
+### Applications:
 - **Common Use:** Data caching, memoization, symbol tables, configurations.
 - **Versatility:** Widely used across programming languages and applications due to their efficiency and flexibility.
 
 
-### dict
+### dict:
 
 Python's `dict` type provides a flexible and efficient way to manage key-value pairs. 
 
-#### Syntax and Initialization
+### Syntax and Initialization:
 
 Dictionaries are initialized using curly braces `{}` and key-value pairs separated by colons `:`:
 
@@ -88,26 +88,25 @@ print(phonebook["alice"])  # Output: 3719
 print(squares)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
 ```
-#### Key Restrictions
+### Key Restrictions:
 
 Keys in dictionaries must be hashable. Immutable types like strings, numbers, and tuples (if their elements are hashable) are suitable as keys.
 
-#### Performance
+### Performance:
 
 Python dictionaries offer average O(1) time complexity for lookup, insert, update, and delete operations due to their hash table implementation.
 
-#### Underlying Implementation
+### Underlying Implementation:
 
 Internally, Python dictionaries are based on hash tables, ensuring efficient storage and retrieval of key-value pairs.
 
-#### Specialized Implementations
+### Specialized Implementations:
 
 While Python's built-in dictionary (`dict`) is optimized for general use cases, specialized third-party implementations like skip lists or B-tree-based dictionaries exist for specific needs.
 
-#### Standard Library Enhancements
+### Standard Library Enhancements:
 
 Python's standard library includes specialized dictionary implementations that extend upon the `dict` class, offering additional features while maintaining performance.
-
 
 ### collections.OrderedDict: Remember the Insertion Order of Keys
 
@@ -136,7 +135,7 @@ print(d.keys())
 
 The `defaultdict` class is another dictionary subclass from the `collections` module that accepts a callable in its constructor. The callable's return value will be used if a requested key cannot be found.
 
-This can save you some typing and make your intentions clearer compared to using `get()` or catching a `KeyError` exception in regular dictionaries:
+This can save some typing and make intentions clearer compared to using `get()` or catching a `KeyError` exception in regular dictionaries:
 
 ```
 from collections import defaultdict
@@ -196,19 +195,19 @@ except TypeError as e:
 writable["one"] = 42
 print(read_only)  # Output: mappingproxy({'one': 42, 'two': 2})
 ```
-## Arrays Data Structures
+## Arrays Data Structures:
 
 An array is a fundamental data structure available in most programming languages, and it has a wide range of uses across different algorithms.
 
-#### Basics of Arrays
+### Basics of Arrays:
 
 Arrays consist of fixed-size data records that allow each element to be efficiently located based on its index. They store information in adjoining blocks of memory, making them contiguous data structures.
 
-#### Real-World Analogy
+### Real-World Analogy:
 
 A real-world analogy for an array data structure is a parking lot, where each parking spot is indexed and can contain different types of vehicles or be restricted to specific types.
 
-#### Performance
+### Performance:
 
 Arrays offer fast lookup times with O(1) complexity for accessing elements by index.
 
@@ -217,7 +216,7 @@ Arrays offer fast lookup times with O(1) complexity for accessing elements by in
 
 Lists are a core part of the Python language and are implemented as dynamic arrays behind the scenes. This allows lists to dynamically adjust their size by allocating or releasing memory as needed when elements are added or removed.
 
-#### Features of Lists:
+### Features of Lists:
 
 - **Dynamic Sizing:** Lists can grow or shrink dynamically based on the elements they contain, adjusting their memory footprint accordingly.
   
@@ -248,7 +247,7 @@ print(arr)      # Output: ['one', 'three', 23]
 
 Tuples are fundamental data structures in Python, similar to lists, but with the key difference that tuples are immutable. Once a tuple is created, its elements cannot be added, removed, or modified. This immutability makes tuples suitable for situations where data should not change after creation.
 
-#### Features of Tuples:
+### Features of Tuples:
 
 - **Immutable:** Elements of a tuple cannot be modified after creation. Operations like item assignment and deletion are not supported.
 
@@ -311,7 +310,7 @@ print(arr)      # Output: array('f', [1.0, 2.0, 2.5, 42.0])
 
 In Python 3.x, `str` objects are used to store textual data as immutable sequences of Unicode characters. Each character in a string is itself a `str` object of length 1, making strings a recursively structured data type.
 
-#### Key Features:
+### Key Features:
 
 - **Immutable Nature:** Strings in Python are immutable, meaning once created, their content cannot be changed. Operations like item assignment or deletion raise `TypeError`.
 
@@ -346,7 +345,7 @@ print(type("abc"[0]))   # Output: <class 'str'>
 
 In Python, `bytes` objects represent immutable sequences of single bytes, where each byte is an integer in the range 0 ≤ x ≤ 255. These objects are designed for handling binary data efficiently.
 
-#### Key Features:
+### Key Features:
 
 - **Immutable Nature:** Like strings, `bytes` objects are immutable. Once created, their content cannot be changed. Attempts to modify or delete elements will raise `TypeError`.
 
@@ -357,8 +356,6 @@ In Python, `bytes` objects represent immutable sequences of single bytes, where 
 - **Range Constraints:** `bytes` objects only accept integers within the range 0 to 255. Attempts to use values outside this range will raise a `ValueError`.
 
 - **Conversion to Mutable Type:** While `bytes` are immutable, they can be converted to mutable `bytearray` objects for situations requiring dynamic byte-level operations.
-
-
 
 ```
 arr = bytes((0, 1, 2, 3))
@@ -380,14 +377,13 @@ arr = b"\x00\x01\x02\x03"
 
 The `bytearray` type in Python is a mutable sequence of integers within the range 0 ≤ x ≤ 255. It is closely related to the `bytes` object but differs in that a `bytearray` can be modified freely—elements can be overwritten, removed, or added dynamically, causing the array to resize as needed.
 
-##### Features of bytearray:
+### Features of bytearray:
 
 - **Mutability**: Elements of a `bytearray` can be modified after creation, making it suitable for scenarios requiring dynamic changes.
   
 - **Representation**: Bytearrays are represented as sequences of bytes, providing a clear and efficient way to handle byte-level data.
   
 - **Dynamic Sizing**: The size of a `bytearray` can grow or shrink based on operations like appending elements or deleting existing ones.
-
 
 ```
 arr = bytearray((0, 1, 2, 3))
@@ -453,7 +449,7 @@ When working with arrays in Python, you have several built-in data structures to
    - **Immutable vs Mutable**: `bytes` for immutable storage of byte-level data, `bytearray` for mutable operations.
    - **Efficiency**: Both types are optimized for byte-level operations and efficient memory usage.
    
-#### Choosing the Right Data Structure
+#### Choosing the Right Data Structure:
 
 - **General-Purpose Use**: Start with lists for their flexibility and ease of use. Lists provide fast development speed and are convenient for most programming tasks.
   
@@ -579,7 +575,7 @@ car2.windshield = "broken"  # Adding new fields is possible
 # Default string representation isn't informative:
 print(car1)  # <Car object at 0x1081e69e8>
 ```
-### `dataclasses.dataclass`: Python 3.7+ Data Classes
+### dataclasses.dataclass: Python 3.7+ Data Classes
 
 Data classes in Python 3.7 and above provide a streamlined way to define classes for storing data, reducing boilerplate code.
 
@@ -649,7 +645,7 @@ try:
 except AttributeError as e:
     print(e)
 ```
-### `typing.NamedTuple`: Improved Namedtuples
+### typing.NamedTuple: Improved Namedtuples
 
 Introduced in Python 3.6, `typing.NamedTuple` provides an enhanced syntax for defining named tuples with added support for type annotations.
 
@@ -691,7 +687,7 @@ except AttributeError as e:
 # Type annotations are not enforced without a type-checking tool:
 print(Car("red", "NOT_A_FLOAT", 99))  # Car(color='red', mileage='NOT_A_FLOAT', automatic=99)
 ```
-### `struct.Struct`: Serialized C Structs
+### struct.Struct: Serialized C Structs
 
 The `struct.Struct` class in Python facilitates the conversion between Python values and C structs serialized into bytes objects. It is commonly used for handling binary data from files or network connections.
 
@@ -713,7 +709,7 @@ print(data)  # b'\x17\x00\x00\x00\x00\x00\x00\x00\x00\x00(B'
 # Unpacking bytes data back into Python values:
 print(MyStruct.unpack(data))  # (23, False, 42.0)
 ```
-### `types.SimpleNamespace`: Fancy Attribute Access
+### types.SimpleNamespace: Fancy Attribute Access
 
 `types.SimpleNamespace` in Python provides a simple way to create objects that act like namespaces with attribute access, similar to dictionaries but with the convenience of attribute-style access syntax.
 
@@ -854,21 +850,21 @@ Python offers multiple stack implementations with different performance and usag
 
 A queue is a collection of objects that supports fast FIFO semantics for inserts (enqueue) and deletes (dequeue). Unlike lists or arrays, queues typically don’t allow for random access to the objects they contain.
 
-#### Real-world Analogy
+### Real-world Analogy:
 
 Imagine a line at a conference where attendees queue up to receive their badges. New arrivals join at the back (enqueue), and attendees at the front receive their badges and leave (dequeue).
 
 Another analogy is a pipe where you add items at one end and remove them from the other, mimicking FIFO behavior.
 
-### Performance and Characteristics
+### Performance and Characteristics:
 
 Queues differ from stacks in that items are removed in the order they were added (FIFO). Performance-wise, a queue should offer O(1) time complexity for both enqueue and dequeue operations.
 
-#### Applications
+#### Applications:
 
 Queues are essential in algorithms like BFS and for solving scheduling and parallel programming problems. Priority queues are specialized variants where elements are retrieved based on their priority rather than insertion order.
 
-### Using Lists for Queues
+### Using Lists for Queues:
 
 Using a regular list as a queue is possible but not ideal due to performance issues. Lists are slow for queue operations because inserting or deleting an element at the beginning requires shifting all other elements, which takes O(n) time.
 
@@ -982,7 +978,7 @@ Python provides versatile queue implementations catering to different performanc
 
 
 
-## Priority Queues
+## Priority Queues:
 
 A priority queue is a data structure that manages records with totally-ordered keys, allowing quick access to the record with the highest or lowest key.
 
